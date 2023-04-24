@@ -1,18 +1,24 @@
 function generate() {
-	const nbDivs = document.getElementById("nbPipes").value;
+	const nbDivs = document.getElementById("nbElem").value;
 
 	for (let i = 0; i < nbDivs; i++) {
-		const div = document.createElement("div");
-		div.id = `pipe${i}`;
-		div.style.width = "30px";
-		div.style.height = "100px";
-		div.style.marginLeft = "10px";
-		div.style.background = "red";
+		const randomHeight = Math.floor(Math.random() * (300 - 1 + 1)) + 0;
 
-		document.getElementById("main").appendChild(div);
+		const div = document.createElement("div");
+		div.id = `${i}`;
+		div.style.height = `${randomHeight}px`;
+
+		document.getElementById("sorting-container").appendChild(div);
 	}
+
+	document.querySelector("#generateButton").disabled = true;
 }
 
 function restart() {
-	document.getElementById("main").removeChild(document.getElementById("pipe"));
+	const children = document.querySelectorAll("#sorting-container > *");
+	for (const child of children) {
+		child.remove();
+	}
+
+	document.querySelector("#generateButton").disabled = false;
 }
