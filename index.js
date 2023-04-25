@@ -2,7 +2,7 @@ function generate() {
 	const nbDivs = document.getElementById("nbElem").value;
 
 	for (let i = 0; i < nbDivs; i++) {
-		const randomHeight = Math.floor(Math.random() * (300 - 1 + 1)) + 0;
+		const randomHeight = Math.floor(Math.random() * (400 - 1 + 1)) + 0;
 
 		const div = document.createElement("div");
 		div.id = `${i}`;
