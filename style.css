@@ -10,7 +10,7 @@ body {
 header {
 	display: flex;
 	align-items: center;
-	height: 50px;
+	height: 40px;
 }
 
 main {
@@ -24,7 +24,7 @@ main {
 	align-items: flex-end;
 	height: 500px;
 	width: 100%;
-	margin-top: 150px;
+	margin-top: 50px;
 }
 
 .sorting-container > div {
