@@ -145,7 +145,7 @@ button:hover:disabled {
 
 .sorting-container {
 	display: flex;
-	align-items: end;
+	align-items: center;
 	height: 500px;
 	width: 95%;
 	margin-top: 50px;
@@ -155,8 +155,4 @@ button:hover:disabled {
 	width: 100%;
 	margin: 0 0px;
 	background-color: var(--TEXT);
-}
-
-.sorting-container > div:hover {
-	background-color: var(--SELECT);
 }

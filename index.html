@@ -17,19 +17,18 @@
 		<div class="panelContainer">
 			<div class="panelGenerate">
 				<p class="panelText">Bars to sort</p>
-				<input class="nbBarsInput" type="number" min="4" max="400" value="4">
+				<input class="nbBarsInput" type="number" min="4" max="400" value="10">
 				<button class="generateButton" onclick=generate()>Generate</button>
 			</div>
 
 			<div class="panelActions">
-				<p class="panelText time">Time : 0 ms</p>
+				<p class="panelText time"></p>
 				<div class="panel">
 					<input id="algorithm" class="algoInput" list="algorithms" value="Bubble Sort">
 					<datalist id="algorithms">
 						<option value="Bubble Sort">
 					</datalist>
 					<button disabled class="startButton" onclick=start()>Start</button>
-					<button disabled class="stopButton">Stop</button>
 					<button class="resetButton" onclick=reset()>Reset</button>
 				</div>
 			</div>

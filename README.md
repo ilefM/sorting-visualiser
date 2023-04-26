@@ -1,6 +1,8 @@
 # sorting-visualiser
 
-This project is a simple sorting algorithms visualiser
+This project is a simple sorting algorithms visualiser made with html, css and vanilla javascript
+
+We can visualise the execution of a sort algorithm
 
 ## Features
 

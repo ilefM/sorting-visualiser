@@ -8,6 +8,13 @@ function generate() {
 		div.id = `${i}`;
 		div.style.height = `${randomHeight}px`;
 
+		div.addEventListener("mouseover", () => {
+			div.style.backgroundColor = "#1a4c81";
+		});
+		div.addEventListener("mouseout", () => {
+			div.style.backgroundColor = "";
+		});
+
 		document.querySelector(".sorting-container").appendChild(div);
 	}
 
@@ -27,39 +34,52 @@ function reset() {
 	document.querySelector(".stopButton").disabled = true;
 }
 
-function start() {
+async function start() {
 	const bars = document.querySelectorAll(".sorting-container > *");
-	bubbleSort(bars);
+	const start = new Date();
+	await bubbleSort(bars);
+	valid(bars);
+	const time = new Date().getTime() - start.getTime();
+	console.log(time);
+	document.querySelector(".time").innerHTML = `Execution Time : ${time} ms`;
 }
 
 function cssToNumber(css) {
 	return Number(css.substring(0, css.length - 2));
 }
 
-function sleep() {
-	return new Promise((r) => setTimeout(r, 4));
+function sleep(ms) {
+	return new Promise((r) => setTimeout(r, ms));
+}
+
+async function valid(bars) {
+	for (let i = 0; i < bars.length; i++) {
+		bars[i].style.backgroundColor = "#1ce462";
+		await sleep(4);
+	}
+	for (let i = 0; i < bars.length; i++) {
+		bars[i].style.backgroundColor = "#f1faee";
+		await sleep(4);
+	}
 }
 
 async function bubbleSort(bars) {
-	for (let i = 1; i < bars.length; i++) {
-		for (let j = 0; j < bars.length - i; j++) {
+	for (let i = bars.length - 1; i > 0; i--) {
+		for (let j = 0; j < i; j++) {
 			const currentH = cssToNumber(bars[j].style.height);
 			const nextH = cssToNumber(bars[j + 1].style.height);
-
-			bars[j].style.backgroundColor = "#e63946";
-
 			if (currentH > nextH) {
-				// bars[j].style.backgroundColor = "#e63946";
-				// bars[j + 1].style.backgroundColor = "#1d3557";
+				bars[j].style.backgroundColor = "#e63946";
+				bars[j + 1].style.backgroundColor = "#e63946";
+				await sleep(4);
 				let smallH;
 				smallH = bars[j + 1].style.height;
 				bars[j + 1].style.height = bars[j].style.height;
 				bars[j].style.height = smallH;
-				// bars[j].style.backgroundColor = "#f1faee";
-				// bars[j + 1].style.backgroundColor = "#f1faee";
+				await sleep(4);
+				bars[j].style.backgroundColor = "#f1faee";
+				bars[j + 1].style.backgroundColor = "#f1faee";
 			}
-			await sleep();
-			bars[j].style.backgroundColor = "#f1faee";
 		}
 	}
 }
