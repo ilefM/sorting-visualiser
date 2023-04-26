@@ -1,19 +1,141 @@
+@font-face {
+	font-family: Hack;
+	src: url(./fonts/HackNerdFont.ttf);
+}
+
+:root {
+	--BACKGROUND_COLOR: #272e35;
+
+	--BLUE_BUTTON: #96c8e8;
+	--BLUE_BUTTON_FOCUS: #21506d;
+
+	--YELLOW_BUTTON: #ffd60a;
+	--YELLOW_BUTTON_FOCUS: #776926;
+
+	--WARN: #e63946;
+	--WARN_BUTTON_FOCUS: #511216;
+
+	--DISABLED: #707070;
+
+	--TEXT: #f1faee;
+
+	--SELECT: #1a4c81;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	background-color: #212529;
+	background-color: var(--BACKGROUND_COLOR);
+	font-family: Hack;
 }
 
-header {
-	display: flex;
-	align-items: center;
-	height: 40px;
+.title {
+	margin-top: 20px;
+	text-align: center;
+	color: var(--TEXT);
+	font-size: 25px;
 }
 
 main {
+	margin-top: 50px;
+}
+
+.panelContainer {
+	margin: 10px 10px;
+}
+
+.panelGenerate {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin: 15px 0px;
+}
+
+.panelActions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.panel {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin: 15px 0px;
+}
+
+.panelText {
+	color: var(--TEXT);
+	font-size: 20px;
+}
+
+#time {
+	margin: 5px 10px;
+	text-align: end;
+}
+
+button {
+	background-color: transparent;
+	padding: 8px 10px;
+	margin: 0 8px;
+	font-size: 16px;
+	border-radius: 6px;
+	font-family: Hack;
+	cursor: pointer;
+}
+
+button:disabled {
+	color: var(--DISABLED);
+	border: 2px solid var(--DISABLED);
+}
+
+button:hover:disabled {
+	background-color: transparent;
+	cursor: not-allowed;
+}
+
+.nbBarsInput {
+	height: 20px;
+	width: 40px;
+	margin: 0 5px;
+}
+
+.algoInput {
+	width: 110px;
+	height: 20px;
+}
+
+.generateAndStartButton {
+	border: 2px solid var(--BLUE_BUTTON);
+	color: var(--BLUE_BUTTON);
+}
+
+.generateAndStartButton:hover {
+	background-color: var(--BLUE_BUTTON_FOCUS);
+}
+
+.stopButton {
+	border: 2px solid var(--YELLOW_BUTTON);
+	color: var(--YELLOW_BUTTON);
+}
+
+.stopButton:hover {
+	background-color: var(--YELLOW_BUTTON_FOCUS);
+}
+
+.resetButton {
+	border: 2px solid var(--WARN);
+	color: var(--WARN);
+}
+
+.resetButton:hover {
+	background-color: var(--WARN_BUTTON_FOCUS);
+}
+
+.visualiser {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,14 +143,18 @@ main {
 
 .sorting-container {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	height: 500px;
-	width: 100%;
+	width: 95%;
 	margin-top: 50px;
 }
 
 .sorting-container > div {
 	width: 100%;
 	margin: 0 0px;
-	background-color: #ced4da;
+	background-color: var(--TEXT);
+}
+
+.sorting-container > div:hover {
+	background-color: var(--SELECT);
 }
