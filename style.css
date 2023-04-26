@@ -108,12 +108,14 @@ button:hover:disabled {
 	height: 20px;
 }
 
-.generateAndStartButton {
+.generateButton,
+.startButton {
 	border: 2px solid var(--BLUE_BUTTON);
 	color: var(--BLUE_BUTTON);
 }
 
-.generateAndStartButton:hover {
+.generateButton:hover,
+.startButton:hover {
 	background-color: var(--BLUE_BUTTON_FOCUS);
 }
 
@@ -143,7 +145,7 @@ button:hover:disabled {
 
 .sorting-container {
 	display: flex;
-	align-items: center;
+	align-items: end;
 	height: 500px;
 	width: 95%;
 	margin-top: 50px;

@@ -2,47 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Sorting Visualiser</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Sorting Visualiser</title>
 </head>
 
 <body>
-    <header>
-        <p class="title">Sorting Algorithm Visualiser</p>
-    </header>
-    <main>
-        <div class="panelContainer">
-            <div class="panelGenerate">
-                <p class="panelText">Bars to sort</p>
-                <input class="nbBarsInput" id="nbElem" type="number" min="4" max="400" value="4">
-                <button class="generateAndStartButton" id="generateButton" onclick=generate()>Generate</button>
-            </div>
+	<header>
+		<p class="title">Sorting Algorithm Visualiser</p>
+	</header>
+	<main>
+		<div class="panelContainer">
+			<div class="panelGenerate">
+				<p class="panelText">Bars to sort</p>
+				<input class="nbBarsInput" type="number" min="4" max="400" value="4">
+				<button class="generateButton" onclick=generate()>Generate</button>
+			</div>
 
-            <div class="panelActions">
-                <p class="panelText" id="time">Time :</p>
-                <div class="panel">
-                    <input id="algorithm" class="algoInput" list="algorithms" value="Bubble Sort">
-                    <datalist id="algorithms">
-                        <option value="Bubble Sort">
-                    </datalist>
-                    <button disabled class="generateAndStartButton" id="startButton" onclick=start()>Start</button>
-                    <button disabled class="stopButton" id="stopButton">Stop</button>
-                    <button class="resetButton" id="resetButton" onclick=reset()>Reset</button>
-                </div>
+			<div class="panelActions">
+				<p class="panelText time">Time : 0 ms</p>
+				<div class="panel">
+					<input id="algorithm" class="algoInput" list="algorithms" value="Bubble Sort">
+					<datalist id="algorithms">
+						<option value="Bubble Sort">
+					</datalist>
+					<button disabled class="startButton" onclick=start()>Start</button>
+					<button disabled class="stopButton">Stop</button>
+					<button class="resetButton" onclick=reset()>Reset</button>
+				</div>
+			</div>
+		</div>
 
-
-            </div>
-
-
-        </div>
-
-        <div class="visualiser">
-            <div id="sorting-container" class="sorting-container"></div>
-        </div>
-    </main>
+		<div class="visualiser">
+			<div class="sorting-container"></div>
+		</div>
+	</main>
 </body>
 <script src="index.js"></script>
 
