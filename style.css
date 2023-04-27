@@ -39,6 +39,13 @@ body {
 	font-size: 25px;
 }
 
+.subtitle {
+	margin-top: 10px;
+	text-align: center;
+	color: var(--TEXT);
+	font-size: 15px;
+}
+
 main {
 	margin-top: 50px;
 }
