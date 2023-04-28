@@ -13,3 +13,7 @@ We can visualise the execution of a sort algorithm
 - [x] Start the execution of an algorithm.
 - [ ] Pause the execution at any time (the bars state are paused).
 - [ ] Print the execution time of the algorithm.
+
+## Improvements
+- [ ] Replace some units by vh units (ex : title) for more responsiveness
+- [ ] Changing the sleep() function for a `window.requestAnimationFrame()`
