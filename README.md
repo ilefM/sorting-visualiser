@@ -16,4 +16,4 @@ We can visualise the execution of a sort algorithm
 
 ## Improvements
 - [ ] Replace some units by vh units (ex : title) for more responsiveness
-- [ ] Changing the sleep() function for a `window.requestAnimationFrame()`
+- [ ] Use the function `window.requestAnimationFrame()`
